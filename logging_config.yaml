@@ -1,0 +1,15 @@
+version: 1.0
+disable_existing_loggers: False
+formatters:
+  main:
+    datefmt: '%m/%d/%Y %H:%M:%S'
+    format: '[%(asctime)s %(levelname)s %(process)d %(filename)s:%(lineno)d %(name)s] %(message)s'
+handlers:
+  console:
+    class: logging.StreamHandler
+    level: INFO
+    formatter: main
+    stream: ext://sys.stdout
+root:
+  level: INFO
+  handlers: [console]
