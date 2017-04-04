@@ -6,13 +6,13 @@ The file `kvstore_test.py` produces the errors described below.
 You can run this container using:
 
 ```
-docker run -it 763725063017.dkr.ecr.us-east-1.amazonaws.com/davileen/kvstore:latest
+docker run -it dleen/kvstore
 ```
 
 If you want to make changes and run do:
 ```
-docker build -t davileen/kvstore .
-docker run -it davileen/kvstore
+docker build -t dleen/kvstore .
+docker run -it dleen/kvstore
 ```
 
 The base image for this container is found in `docker/Dockerfile` and is just Ubuntu 14.04 with Python 2.7.13 and mxnet built for CPU with distributed kvstore enabled.
