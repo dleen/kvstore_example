@@ -42,13 +42,12 @@ def mxnet_process_worker(role, conn):
     logger.info("Starting run...")
     kv = mx.kvstore.create('dist')
 
-    kv.init(2, mx.nd.zeros((50, 50)))
-    # Errors still occur with this uncommented.
-    # kv.push(2, mx.nd.zeros((50, 50)))
+    kv.init(2, mx.nd.full((50, 50), 0))
+    kv.push(2, mx.nd.full((50, 50), 1))
 
     logger.info("Initialized")
 
-    a = mx.nd.zeros((50, 50))
+    a = mx.nd.empty((50, 50))
 
     logger.info("First pull")
     kv.pull(2, a)
